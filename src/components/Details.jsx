@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { Recipecontext } from "../context/RecipeContext";
+import { toast } from "react-toastify";
 
 const Details = () => {
     const navigator = useNavigate();
@@ -12,6 +13,7 @@ const Details = () => {
     const DeleteHandler = () => {
         setrecipe(recipe.filter(r => r.id != id))
         localStorage.setItem("recipe", JSON.stringify(recipe.filter(r => r.id != id)));
+        toast.success("Recipe Deleted Successfully!");
         navigator(-1);
     }
 
@@ -23,7 +25,7 @@ const Details = () => {
                     <h1 className="text-xl mb-5 mt-5 text-center font-medium">{recipeDets.recipeName}</h1>
                     <p className="text-center">{recipeDets.discription}</p>
                     <div className="w-full flex justify-between py-10 px-5 items-center">
-                        <Link to="/update-recipe">
+                        <Link to={`/update-recipe/${id}`}>
                             <button className="py-2 px-6 border border-[#FC815F] text-[#FC815F] font-medium rounded">Update</button>
                         </Link>
                         <Link>
@@ -51,7 +53,7 @@ const Details = () => {
                 </div>
             </div>
         </div>
-    ) : <h1 className="text-2xl font-semibold text-center mt-56">Loading....</h1>
+    ) : <h1 className="text-2xl font-semibold text-center mt-56">Loading Recipe....</h1>
 };
 
 export default Details;
