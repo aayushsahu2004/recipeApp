@@ -38,9 +38,9 @@ const Update = () => {
     };
 
     return recipeDets ? (
-        <div className='w-full h-[120vh] px-20 flex items-center justify-center'>
-            <div className='w-2/3 h-full bg-red'>
-                <h1 className='mt-10 mb-10 text-6xl font-extrabold'>Update <br />Your <span className='text-[#FC815F]'>Recipe</span></h1>
+        <div className='w-full pb-5 md:pb-0 md:h-[120vh] mt-10 px-5 md:px-20 flex items-center justify-center'>
+            <div className='w-full md:w-2/3 h-full bg-red'>
+                <h1 className='mt-10 mb-10 text-5xl md:text-6xl font-extrabold'>Update <br />Your <span className='text-[#FC815F]'>Recipe</span></h1>
                 <form onSubmit={UpdateHandler}>
                     <input onChange={(e) => setimage(e.target.value)} value={image} className='w-full py-3 px-6 border border-zinc-400 rounded-md mb-6' type="url" placeholder='Recipe Image URL' />
                     <input onChange={(e) => setrecipeName(e.target.value)} value={recipeName} className='w-full py-3 px-6 border border-zinc-400 rounded-md mb-6' type="text" placeholder='Recipe Name' />
