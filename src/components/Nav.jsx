@@ -7,7 +7,7 @@ const Nav = () => {
             <div>
                 <h1 className='hidden md:block text-2xl font-bold text-[#FC815F]'>Foodi</h1>
             </div>
-            <div className='flex items-center gap-10'>
+            <div className='flex items-center gap-8 md:gap-10'>
                 <NavLink className={(e) => (e.isActive ? "text-[#FC815F]" : " ")} to="/">Home</NavLink>
                 <NavLink className={(e) => (e.isActive ? "text-[#FC815F]" : " ")} to="/recipe">Recipe</NavLink>
                 <NavLink className={(e) => (e.isActive ? "text-[#FC815F]" : " ")} to="/about">About Us</NavLink>
